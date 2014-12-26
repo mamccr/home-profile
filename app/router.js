@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('homeProfiles', function() {
+    this.resource('homeProfile');
+  });
 });
 
 export default Router;
