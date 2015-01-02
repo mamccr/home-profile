@@ -12,7 +12,7 @@ export default DS.ActiveModelAdapter.extend({
 
   pathForType: function(type) {
     if (type === 'homeProfile') {
-      return 'home_profile'
+      return 'home_profile';
     }
     return DS.ActiveModelAdapter.prototype.pathForType.call(this, type);
   }

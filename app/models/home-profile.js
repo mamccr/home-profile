@@ -1,8 +1,9 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
-  dwelling_type: DS.attr('string'),
-  year_built: DS.attr('number'),
+  dwellingType: DS.attr('string'),
+  yearBuilt: DS.attr('number'),
   square_footage: DS.attr('number'),
   number_of_adults: DS.attr('number'),
   number_of_children: DS.attr('number'),
@@ -39,5 +40,7 @@ export default DS.Model.extend({
   num_flourescent: DS.attr('number'),
   hours_flourescent: DS.attr('number'),
   num_halogen: DS.attr('number'),
-  hours_halogen: DS.attr('number')
+  hours_halogen: DS.attr('number'),
+  autoSaveAttributes: Ember.computed('dwellingType', 'yearBuilt', function() {
+  })
 });
