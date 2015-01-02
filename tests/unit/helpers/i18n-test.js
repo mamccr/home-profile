@@ -1,6 +1,6 @@
 import {
   i18n
-} from 'home-profile-ember/helpers/i18n';
+} from 'home-profile-ember/helpers/i-n';
 
 module('I18nHelper');
 
