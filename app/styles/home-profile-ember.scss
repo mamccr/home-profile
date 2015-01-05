@@ -1,0 +1,294 @@
+@import '../../bower_components/foundation/scss/foundation'; /* import everything */
+@import '../../bower_components/seiyria-bootstrap-slider/sass/slider';
+
+$fullWidth: 598px;
+$labelWidth: 300px;
+$sText: #625C55;
+$sChrome: #BDB9B2;
+$sChromeLight: #F0EEEB;
+$red: #A41E38;
+$green: #899953;
+$baseline: 18px;
+$basefont: 13px;
+
+form.survey {
+
+  margin-bottom: 0;
+  label {
+    width: $labelWidth;
+    text-align: left;
+    color: lighten($sText, 10%);
+    span.help-inline {
+      padding: 0;
+    }
+  }
+  label.checkboxes {
+    width: $labelWidth + 40px;
+  }
+  .input {
+    position: relative;
+    margin-left: $labelWidth + 20px;
+    width: $fullWidth - $labelWidth - 20px;
+  }
+  .input.checkboxes {
+    margin-left: $labelWidth + 60px;
+    width: $fullWidth - $labelWidth - 60px;
+  }
+  fieldset {
+    border-top: 1px solid $sChromeLight;
+    padding-top: $baseline * 2;
+    position: relative;
+    &:first-child, &.first {
+      border-top: none;
+      margin-top: -$basefont;
+    }
+    legend {
+      color: $sText;
+      padding: 0;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      position: absolute;
+      margin-top: -26px;
+      + p {
+        margin-top: 10px;
+      }
+    }
+    .sub-legend {
+      color: $sChrome;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: absolute;
+      top: 16px;
+      right: 0;
+    }
+    fieldset {
+      margin: 8px 0 0 0;
+      legend {
+        font-size: 16px;
+      }
+      + fieldset {
+        margin-top: 0;
+        border-top: none;
+      }
+    }
+  }
+  .actions {
+    text-align: right;
+    // Adjust to fit to bottom of panel
+    width: 100%;
+    padding: 20px;
+    margin: 0 0 -20px -20px;
+    .cancel {
+      float: left;
+      line-height: 30px;
+      a {
+        color: $sText;
+      }
+    }
+    .errors {
+      color: $red;
+      margin-top: 10px;
+    }
+  }
+  // Pretty much only used on onboarding step 1
+  &.narrow {
+    $labelWidth: 160px;
+    label {
+      width: $labelWidth;
+      text-align: right;
+      font-weight: bold;
+    }
+    .checkbox {
+      label { width: auto; }
+      .field_with_errors { display: inline-block; }
+    }
+    .input {
+      width: $fullWidth - $labelWidth - 20px;
+      margin-left: $labelWidth + 20px;
+      .inputs-list label {
+        width: auto;
+        text-align: left;
+      }
+      &.copy-block {
+        width: $fullWidth - $labelWidth - 40px;
+        border: 1px solid $sChrome;
+        padding: 10px;
+        height: 120px;
+        overflow-y: scroll;
+        p {
+          font-size: 11px;
+          color: $sText;
+        }
+      }
+    }
+  }
+  &.form-stacked {
+    margin: 0;
+    padding: 0;
+    .actions {
+      margin: 0 0 -20px -20px;
+    }
+  }
+  > .saved .input {
+    padding-top: 6px;
+    line-height: 18px;
+    color: $green;
+    font-weight: bold;
+  }
+}
+
+input.micro {
+  width: 20px;
+}
+
+input, textarea, {
+  &.span12-panel {
+    margin-left: 0;
+    width: 658px - 4px - 10px;
+  }
+  &.span11-panel {
+    margin-left: 0;
+    width: 598px - 4px - 10px;
+  }
+}
+
+.inputs-list .field_with_errors {
+   display: inline;
+}
+
+.field_with_errors {
+  color: $red;
+  label {
+    color: $red !important;
+  }
+  input {
+    border-color: $red;
+  }
+}
+
+.field-errors-list {
+  color: $red;
+  padding-top: 5px;
+  line-height: 16px;
+}
+
+.home-size-slider {
+  padding-top: 40px;
+
+  .slider {
+    .tooltip.top {
+      margin-top: -32px;
+    }
+
+    .slider-handle {
+      outline: none;
+      background-color: darken(#b8b4ae, 20%);
+    }
+
+    .slider-track {
+      background-color: #dbdad7;
+      background-image: none;
+    }
+  }
+
+  .tooltip {
+    position: absolute;
+    z-index: 1030;
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    visibility: visible;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width: 80px;
+    background: none;
+  }
+  .tooltip.in {
+    filter: alpha(opacity=90);
+    opacity: .9;
+  }
+  .tooltip.top {
+    padding: 5px 0;
+    margin-top: -3px;
+  }
+  .tooltip.right {
+    padding: 0 5px;
+    margin-left: 3px;
+  }
+  .tooltip.bottom {
+    padding: 5px 0;
+    margin-top: 3px;
+  }
+  .tooltip.left {
+    padding: 0 5px;
+    margin-left: -3px;
+  }
+  .tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 4px;
+  }
+  .tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+  .tooltip.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+  }
+  .tooltip.top-left .tooltip-arrow {
+    bottom: 0;
+    left: 5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+  }
+  .tooltip.top-right .tooltip-arrow {
+    right: 5px;
+    bottom: 0;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+  }
+  .tooltip.right .tooltip-arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: #000;
+  }
+  .tooltip.left .tooltip-arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #000;
+  }
+  .tooltip.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+  }
+  .tooltip.bottom-left .tooltip-arrow {
+    top: 0;
+    left: 5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+  }
+  .tooltip.bottom-right .tooltip-arrow {
+    top: 0;
+    right: 5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+  }
+}
