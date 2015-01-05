@@ -2,7 +2,7 @@ import Ember from "ember";
 
 export default Ember.Handlebars.makeBoundHelper(function(property, options) {
   var params = {};
-  if (typeof(options) != "undefined") {
+  if (typeof(options) !== "undefined") {
     params = options.hash;
   }
 

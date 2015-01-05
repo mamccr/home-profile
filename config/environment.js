@@ -30,7 +30,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-eval'", // Allow scripts from https://cdn.mxpnl.com
       'font-src': "'self'", // Allow fonts to be loaded from http://fonts.gstatic.com
       'connect-src': "'self' http://localhost:3000", // Allow data (ajax/websocket) from localhost
-      'img-src': "'self'",
+      'img-src': "'self' data:",
       'style-src': "'self' 'unsafe-inline'", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
       'media-src': "'self'"
     }
